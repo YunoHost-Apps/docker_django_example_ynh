@@ -50,7 +50,7 @@ myynh_add_conf_files
 #=================================================
 ynh_script_progression --message="Integrating service in YunoHost..."
 
-yunohost service add $app
+yunohost service add $app --description="$app"
 
 #=================================================
 # GENERIC FINALIZATION

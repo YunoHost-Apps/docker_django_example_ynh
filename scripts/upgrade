@@ -67,7 +67,7 @@ myynh_setup_docker
 #=================================================
 ynh_script_progression --message="Starting systemd service '$app'..." --weight=5
 
-yunohost service add $app
+yunohost service add $app --description="$app"
 ynh_systemd_action --service_name=$app --action="start"
 
 #=================================================
