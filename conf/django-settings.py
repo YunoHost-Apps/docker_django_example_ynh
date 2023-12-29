@@ -87,7 +87,6 @@ LOGIN_URL = '/yunohost/sso/'
 LOGOUT_REDIRECT_URL = '/yunohost/sso/'
 # /yunohost/sso/?action=logout
 
-ROOT_URLCONF = 'urls'  # .../conf/urls.py
 
 # -----------------------------------------------------------------------------
 
@@ -99,11 +98,11 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ['DB_NAME'],
-        'USER': os.environ['DB_USER'],
-        'PASSWORD': os.environ['DB_PASS'],
-        'HOST': os.environ['DB_HOST'],
-        'PORT': os.environ['DB_PORT'],
+        'NAME': os.environ['POSTGRES_DB'],
+        'USER': os.environ['POSTGRES_USER'],
+        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+        'HOST': os.environ['POSTGRES_HOST'],
+        'PORT': os.environ['POSTGRES_PORT'],
         'CONN_MAX_AGE': 600,
     }
 }

@@ -24,15 +24,11 @@ services:
         # https://hub.docker.com/_/postgres
         image: postgres:alpine
         restart: "no"
-        hostname: postgres # same as "DB_HOST" in common.env
+        hostname: postgres # same as "POSTGRES_HOST" in common.env
         ports:
-            - "5432" # same as "DB_PORT" in common.env
+            - "5432" # same as "POSTGRES_PORT" in common.env
         env_file: ./common.env
-        environment:
-            - POSTGRES_HOST_AUTH_METHOD=trust
         volumes:
-            - ./postgres-init.sh:/docker-entrypoint-initdb.d/init-user-db.sh:ro
-            #
             # __DATA_DIR__ -> /home/yunohost.app/$app/
             - __DATA_DIR__/postgresql-data/:/var/lib/postgresql/data/:rw
 

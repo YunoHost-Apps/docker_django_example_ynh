@@ -35,6 +35,9 @@ run-shell-app: ## Build and start the App container and go into shell
 	./compose.sh build --pull app
 	./compose.sh run --entrypoint '/bin/bash' app
 
+shell-postgres: ## go into a interactive bash shell in App container
+	./compose.sh exec postgres /bin/bash
+
 ###################################################################################################
 
 systemd-status:  ## Status of the app SystemD services
@@ -45,5 +48,5 @@ systemd-restart:  ## Status of the app SystemD services
 
 ###################################################################################################
 
-.PHONY: help build up down restart ps logs shell-app run-shell-app
+.PHONY: help build up down restart ps logs shell-app run-shell-app shell-postgres systemd-status systemd-restart
 

@@ -3,9 +3,12 @@
 
 import os
 import sys
+from pathlib import Path
 
 
 def main():
+    assert Path('/.dockerenv').is_file(), f'Call this script only in docker container!'
+
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_example.settings.docker')
     try:
         from django.core.management import execute_from_command_line

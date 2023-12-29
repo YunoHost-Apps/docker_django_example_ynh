@@ -10,6 +10,8 @@ def main():
 
     print('-'*100)
     for file_path in sorted(conf_path.glob('*')):
+        if not file_path.is_file():
+            continue
         print(f'ynh_add_config --template="{file_path.name}" --destination="$data_dir/{file_path.name}"')
     print('-' * 100)
 

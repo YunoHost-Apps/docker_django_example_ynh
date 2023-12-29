@@ -1,7 +1,10 @@
 #!/bin/sh
 
-# The content of: "/docker-entrypoint-initdb.d/init-user-db.sh"
-
 set -ex
+
+./wait_for_services.py
+
+./manage.py collectstatic
+./manage.py migrate
 
 gunicorn --config gunicorn.conf.py wsgi
