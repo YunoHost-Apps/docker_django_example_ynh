@@ -22,7 +22,18 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 [![Python Versions](https://img.shields.io/pypi/pyversions/docker_django_example_ynh)](https://github.com/YunoHost-Apps/docker_django_example_ynh/blob/main/pyproject.toml)
 [![License GPL-3.0-or-later](https://img.shields.io/pypi/l/docker_django_example_ynh)](https://github.com/YunoHost-Apps/docker_django_example_ynh/blob/main/LICENSE)
 
-A example YunoHost App
+A example YunoHost App that package a Python/Django via Docker.
+
+Notes:
+
+ * Use docker-compose from Debian repository (installed by manifest v2 `[resources.apt]` section)
+ * Add tree containers:
+   * The Web App container with the Django project
+   * Postgres
+   * Redis
+ * Use YunoHost system nginx as proxy
+ * Store docker volumes (postgres database files) in `__DATA_DIR__` -> `/home/yunohost.app/$app/`
+ * Serve static files from system nginx (From: `__INSTALL_DIR__` -> `/var/www/$app/`)
 
 Pull requests welcome ;)
 
