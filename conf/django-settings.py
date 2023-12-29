@@ -152,8 +152,9 @@ else:
     STATIC_URL = '/static/'
     MEDIA_URL = '/media/'
 
-STATIC_ROOT = str(__CWD_PATH / 'static')
-MEDIA_ROOT = str(__CWD_PATH / 'media')
+# Docker volumes mount points to /var/www/$app/[static|media]
+STATIC_ROOT = '/static/'
+MEDIA_ROOT = '/media/'
 
 
 # -----------------------------------------------------------------------------
