@@ -56,11 +56,14 @@ myynh_fix_file_permissions() {
     (
         set -x
 
-        # /var/www/$app/
+        # $install_dir == __INSTALL_DIR__ == /var/www/$app/
+        mkdir -p "$install_dir/static/"
+        mkdir -p "$install_dir/media/"
         chown -c -R "$app:www-data" "$install_dir"
         chmod -c o-rwx "$install_dir"
 
-        # /home/yunohost.app/$app/
+        # $data_dir == __DATA_DIR__ == /home/yunohost.app/$app/
+        mkdir -p "$data_dir/volumes/postgresql-data/"
         chown -c -R "$app:" "$data_dir"
         chmod -c o-rwx "$data_dir"
 

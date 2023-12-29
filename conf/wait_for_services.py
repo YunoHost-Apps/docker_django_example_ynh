@@ -6,7 +6,7 @@ import socket
 import sys
 import time
 
-TIMEOUT = 10
+TIMEOUT = 30
 
 
 def tcp_test(service_name, *, host_key, port_key, timeout=TIMEOUT):

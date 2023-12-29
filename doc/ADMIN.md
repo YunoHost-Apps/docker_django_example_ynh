@@ -1,10 +1,29 @@
 ## Settings and upgrades
 
-Test sending emails, e.g.:
+To debug the installed package:
+
+* login to you YunoHost instance
+* Go into app shell
+* Use `make` targets or `./compose.sh`
 
 ```bash
 ssh admin@yourdomain.tld
-root@yunohost:~# /home/yunohost.app/django_example/manage.py sendtestemail --admins
+root@yunohost:~# yunohost app shell docker_django_example
+...
+docker_django_example@testyunohost:/home/yunohost.app/docker_django_example$ make
+help                           List all commands
+build                          Update/Build docker services
+up                             Start docker containers
+down                           Stop all containers
+restart                        Restart by call "down" and "up"
+ps                             List containers
+logs                           Display and follow docker logs
+shell-app                      go into a interactive bash shell in App container
+run-shell-app                  Build and start the App container and go into shell
+shell-postgres                 go into a interactive bash shell in App container
+systemd-status                 Status of the app SystemD services
+systemd-restart                Status of the app SystemD services
+
 ```
 
 How to debug a django YunoHost app, take a look into:
