@@ -1,8 +1,9 @@
 *
 !app-entrypoint.sh
-!requirements.txt
 !django-settings.py
 !gunicorn.conf.py
 !manage.py
+!requirements.txt
+!setup_user.py
 !wait_for_services.py
 !wsgi.py

@@ -9,6 +9,8 @@ WorkingDirectory=__DATA_DIR__/
 
 # Will result in docker down + docker up
 ExecStart=make restart
+ExecReload=make restart
+ExecStop=make down
 
 StandardOutput=syslog
 StandardError=syslog

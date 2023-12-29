@@ -26,6 +26,7 @@ RUN set -x \
 COPY app-entrypoint.sh .
 COPY django-settings.py .
 COPY gunicorn.conf.py .
+COPY setup_user.py .
 COPY wait_for_services.py .
 COPY wsgi.py .
 
