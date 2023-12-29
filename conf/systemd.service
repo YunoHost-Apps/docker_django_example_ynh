@@ -9,12 +9,11 @@ WorkingDirectory=__DATA_DIR__/
 
 # Will result in docker down + docker up
 ExecStart=make restart
+
+Restart=on-abort
+
 ExecReload=make restart
 ExecStop=make down
-
-StandardOutput=syslog
-StandardError=syslog
-SyslogIdentifier=__APP__-server
 
 [Install]
 WantedBy=multi-user.target
