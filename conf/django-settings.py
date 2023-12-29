@@ -30,8 +30,10 @@ __CWD_PATH=Path.cwd()
 PATH_URL = '__PATH__'
 PATH_URL = PATH_URL.strip('/')
 
+
 YNH_CURRENT_HOST = '__YNH_CURRENT_HOST__'  # YunoHost main domain from: /etc/yunohost/current_host
-ALLOWED_HOSTS = (YNH_CURRENT_HOST,)
+
+ALLOWED_HOSTS = ('__DOMAIN__',)  # e.g.: 'sub.domain.tld' or 'domain.tld'
 
 # -----------------------------------------------------------------------------
 # config_panel.toml settings:
