@@ -13,6 +13,7 @@ Notes:
    * The Web App container with the Django project
    * Postgres
    * Redis
+ * Use SystemD service file to start the Docker container
  * Use YunoHost system nginx as proxy
  * Store docker volumes (postgres database files) in `__DATA_DIR__` -> `/home/yunohost.app/$app/`
  * Serve static files from system nginx (From: `__INSTALL_DIR__` -> `/var/www/$app/`)
