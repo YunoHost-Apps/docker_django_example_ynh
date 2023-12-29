@@ -47,6 +47,7 @@ myynh_add_conf_files() {
         ynh_add_config --template="requirements.txt" --destination="$data_dir/requirements.txt"
         ynh_add_config --template="setup_user.py" --destination="$data_dir/setup_user.py"
         ynh_add_config --template="systemd.service" --destination="$data_dir/systemd.service"
+        ynh_add_config --template="urls.py" --destination="$data_dir/urls.py"
         ynh_add_config --template="wait_for_services.py" --destination="$data_dir/wait_for_services.py"
         ynh_add_config --template="wsgi.py" --destination="$data_dir/wsgi.py"
     )
