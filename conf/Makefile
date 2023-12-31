@@ -26,6 +26,9 @@ ps: ## List containers
 logs: ## Display and follow docker logs
 	./compose.sh logs --tail=500 --follow
 
+system-prune:  ## Cleanup docker by call "system prune"
+	docker system prune --force --all --filter until=336h
+
 ###################################################################################################
 
 shell-app: ## go into a interactive bash shell in App container
@@ -48,5 +51,5 @@ systemd-restart:  ## Status of the app SystemD services
 
 ###################################################################################################
 
-.PHONY: help build up down restart ps logs shell-app run-shell-app shell-postgres systemd-status systemd-restart
+.PHONY: help build up down restart ps logs system-prune shell-app run-shell-app shell-postgres systemd-status systemd-restart
 
