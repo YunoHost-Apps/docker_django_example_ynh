@@ -14,7 +14,7 @@ services:
             - postgres:postgres
         depends_on:
             - postgres
-        user: ${CURRENT_UID}:${CURRENT_GID}
+        user: ${USERMAP_UID}:${USERMAP_GID}
         volumes:
             # Mount CWD (/home/yunohost.app/$app/) into WORKDIR:
             - ./:/app/:rw
@@ -35,7 +35,7 @@ services:
         ports:
             - "5432" # same as "POSTGRES_PORT" in common.env
         env_file: ./common.env
-        user: ${CURRENT_UID}:${CURRENT_GID}
+        user: ${USERMAP_UID}:${USERMAP_GID}
         volumes:
             - /etc/passwd:/etc/passwd:ro
             - /etc/group:/etc/group:ro
