@@ -39,7 +39,7 @@ myynh_add_conf_files() {
         ynh_add_config --template="app-entrypoint.sh" --destination="$data_dir/app-entrypoint.sh"
         ynh_add_config --template="common.env" --destination="$data_dir/common.env"
         ynh_add_config --template="compose.sh" --destination="$data_dir/compose.sh"
-        ynh_add_config --template="django-settings.py" --destination="$data_dir/django-settings.py"
+        ynh_add_config --template="settings.py" --destination="$data_dir/settings.py"
         ynh_add_config --template="docker-compose.yml" --destination="$data_dir/docker-compose.yml"
         ynh_add_config --template="gunicorn.conf.py" --destination="$data_dir/gunicorn.conf.py"
         ynh_add_config --template="manage.py" --destination="$data_dir/manage.py"

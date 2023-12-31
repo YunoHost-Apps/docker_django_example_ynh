@@ -1,6 +1,6 @@
 *
 !app-entrypoint.sh
-!django-settings.py
+!settings.py
 !gunicorn.conf.py
 !manage.py
 !requirements.txt
