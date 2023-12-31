@@ -4,7 +4,7 @@ source common.env
 
 set -ex
 
-# Used in docker-compose.yml:
+# To run services as app user: Store UID/GID and use it in docker-compose.yml:
 CURRENT_UID="$(id -u)"
 export CURRENT_UID
 
