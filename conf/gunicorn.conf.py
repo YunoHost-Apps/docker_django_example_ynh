@@ -8,7 +8,7 @@ bind = '0.0.0.0:8000'
 
 
 # https://docs.gunicorn.org/en/latest/settings.html#workers
-workers = multiprocessing.cpu_count() * 2 + 1
+workers = multiprocessing.cpu_count() + 1
 
 
 # https://docs.gunicorn.org/en/latest/settings.html#logging

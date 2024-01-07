@@ -21,12 +21,3 @@ ENV PYTHONUNBUFFERED=1
 RUN set -x \
     && python3 -m pip install -U pip \
     && pip install --no-cache -r requirements.txt
-
-# Needed files to startup the Django App:
-COPY app-entrypoint.sh .
-COPY django-settings.py .
-COPY gunicorn.conf.py .
-COPY wsgi.py .
-
-# Usefull for debugging:
-COPY manage.py .

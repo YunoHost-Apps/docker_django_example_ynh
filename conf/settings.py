@@ -30,8 +30,10 @@ __CWD_PATH=Path.cwd()
 PATH_URL = '__PATH__'
 PATH_URL = PATH_URL.strip('/')
 
+
 YNH_CURRENT_HOST = '__YNH_CURRENT_HOST__'  # YunoHost main domain from: /etc/yunohost/current_host
-ALLOWED_HOSTS = (YNH_CURRENT_HOST,)
+
+ALLOWED_HOSTS = ('__DOMAIN__',)  # e.g.: 'sub.domain.tld' or 'domain.tld'
 
 # -----------------------------------------------------------------------------
 # config_panel.toml settings:
@@ -97,11 +99,11 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ['DB_NAME'],
-        'USER': os.environ['DB_USER'],
-        'PASSWORD': os.environ['DB_PASS'],
-        'HOST': os.environ['DB_HOST'],
-        'PORT': os.environ['DB_PORT'],
+        'NAME': os.environ['POSTGRES_DB'],
+        'USER': os.environ['POSTGRES_USER'],
+        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+        'HOST': os.environ['POSTGRES_HOST'],
+        'PORT': os.environ['POSTGRES_PORT'],
         'CONN_MAX_AGE': 600,
     }
 }
@@ -150,8 +152,9 @@ else:
     STATIC_URL = '/static/'
     MEDIA_URL = '/media/'
 
-STATIC_ROOT = str(__CWD_PATH / 'static')
-MEDIA_ROOT = str(__CWD_PATH / 'media')
+# Docker volumes mount points to /var/www/$app/[static|media]
+STATIC_ROOT = '/static/'
+MEDIA_ROOT = '/media/'
 
 
 # -----------------------------------------------------------------------------

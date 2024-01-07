@@ -66,6 +66,9 @@ def main():
 
     print('-' * 100)
     for file_path in sorted(conf_path.glob('*')):
+        if not file_path.is_file():
+            continue
+
         copy_patch(
             src_file=file_path,
             replaces=REPLACES,

@@ -1,3 +1,4 @@
 .*
+__pycache__
 !.dockerignore
 /local_test/
